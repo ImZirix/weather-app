@@ -1,0 +1,135 @@
+@import url(assets/styles/fonts.scss);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  background-color: hsl(0, 0%, 0%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: hsl(0, 0%, 0%);
+  width: 450px;
+  //border: 1px solid white;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    :nth-child(2) {
+      display: flex;
+      gap: 30px;
+    }
+    ul {
+      margin: 0 20px 0 20px;
+    }
+    li {
+      list-style-type: none;
+      text-decoration: underline;
+      cursor: pointer;
+      color: hsl(0, 0%, 80%);
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        color: hsl(0, 0%, 100%);
+        transform: translateY(-5px);
+      }
+    }
+    .logo {
+      text-decoration: none;
+      cursor: default;
+      color: hsl(0, 0%, 100%);
+    }
+  }
+}
+
+.input-container {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  form {
+    position: relative;
+  }
+  label {
+    color: hsl(0, 0%, 100%);
+  }
+  input {
+    width: 400px;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 16px;
+    transition: ease 0.3s;
+    background-color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 30%);
+    color: white;
+    border-radius: 30px;
+    &:hover {
+      scale: 1.03;
+    }
+  }
+  .search-icon {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    color: hsl(0, 0%, 40%);
+  }
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  gap: 10px;
+  > * {
+    animation: fade ease 1s;
+  }
+  .address {
+    font-size: 40px;
+    text-transform: capitalize;
+  }
+  .temp {
+    font-size: 100px;
+    position: relative;
+    &::after {
+      content: "°";
+      font-size: 50px;
+      position: absolute;
+      top: 10px;
+    }
+  }
+}
+
+.icon {
+  scale: 10;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateY(-9%);
+  }
+}
